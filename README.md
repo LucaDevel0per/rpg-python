@@ -32,7 +32,7 @@
 
 1. Clone este repositório:
    ```bash
-   git clone https://github.com/seu-usuario/rpg-adventure.git
+   git clone https://github.com/Luca-Devel0per/rpg-python.git
    cd rpg-adventure
    ```
 
