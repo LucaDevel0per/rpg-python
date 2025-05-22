@@ -1,55 +1,87 @@
 from models.jogador import Guerreiro
 from utils.gerar_monstros import gerar_monstro
 import random
+import time
+from colorama import init, Fore, Back, Style
+
+# Inicializa o colorama
+init(autoreset=True)
 
 player = Guerreiro('Luca', 10, 15)
 monstro = gerar_monstro(2)
 
-print(f"O monstro gerado é {monstro}!")
+print(Fore.CYAN + Style.BRIGHT + f"O monstro gerado é {monstro}!")
+time.sleep(1)
 turno = 1
 
-
 while player.vida > 0 and monstro.vida > 0:
-    print(f"\n--- Turno {turno} ---")
-
+    print(Fore.YELLOW + Style.BRIGHT + f"\n--- Turno {turno} ---")
+    time.sleep(0.5)
+    
+    # Atualiza status do jogador (cooldowns e buffs)
     status_msg = player.atualizar_status()
     if status_msg:
-        print(status_msg)
-
-    cooldown_info = f"Cooldown de habilidade: {player.cooldown_habilidade} turnos" if player.cooldown_habilidade > 0 else "Habilidade pronta!"
-    print(cooldown_info)
-
-    print(f"Inventário: {player.inventario['poção_de_vida']} poções de vida, {player.inventario['poção_atk']} poções de ataque")
-
-
-    escolha = input("Escolha:\n[1] Atacar\n[2] Usar Habilidade\n[3] Usar Poção de vida\n[4] Usar Poção de ataque\n")
+        print(Fore.BLUE + status_msg)
+        time.sleep(0.8)
+    
+    # Mostra informações de cooldown
+    if player.cooldown_habilidade > 0:
+        cooldown_info = f"Cooldown da habilidade: {player.cooldown_habilidade} turnos"
+        print(Fore.RED + cooldown_info)
+    else:
+        print(Fore.GREEN + "Habilidade pronta!")
+    time.sleep(0.5)
+    
+    # Mostra inventário
+    print(Fore.MAGENTA + f"Inventário: {player.inventario['poção_de_vida']} poções de vida, {player.inventario['poção_atk']} poções de ataque")
+    time.sleep(0.5)
+    
+    # Status do jogador e monstro
+    print(f"\n{Fore.GREEN + player.nome}: {player.vida} HP | {Fore.RED + monstro.nome}: {monstro.vida} HP")
+    time.sleep(0.5)
+    
+    escolha = input(Fore.CYAN + "\nEscolha:\n" + 
+                   Fore.WHITE + "[1] Atacar\n" + 
+                   Fore.WHITE + "[2] Usar Habilidade\n" + 
+                   Fore.WHITE + "[3] Usar Poção de Vida\n" + 
+                   Fore.WHITE + "[4] Usar Poção de Ataque\n" + 
+                   Fore.CYAN + "> ")
     try:
         if escolha == "1":
             player.atacar(monstro)
+            time.sleep(1)
         elif escolha == "2":
-            print(player.habilidade(monstro))
-        elif escolha == '3':
-            print(player.usar_pocao_vida())
-        elif escolha == '4':
-            print(player.usar_pocao_atk())
+            resultado = player.habilidade(monstro)
+            print(Fore.BLUE + resultado)
+            time.sleep(1)
+        elif escolha == "3":
+            resultado = player.usar_pocao_vida()
+            print(Fore.GREEN + resultado)
+            time.sleep(1)
+        elif escolha == "4":
+            resultado = player.usar_pocao_atk()
+            print(Fore.YELLOW + resultado)
+            time.sleep(1)
         else:
-            print("Opção invalida!")
+            print(Fore.RED + "Opção inválida, você perdeu o turno!")
+            time.sleep(1)
 
-
-        if monstro.vida <=0:
-            print("Você venceu!")
+        if monstro.vida <= 0:
+            print(Fore.GREEN + Style.BRIGHT + "\n★★★ Você venceu! ★★★")
             break
 
+        print(Fore.RED + "\nO monstro se prepara para atacar...")
+        time.sleep(1)
         monstro.atacar(player)
-
-        print(player.status())
-        print(monstro.status())
+        time.sleep(1)
         
         if player.vida <= 0:
-            print("Você foi derrotado...")
+            print(Fore.RED + Style.BRIGHT + "\n☠ Você foi derrotado... ☠")
             break
-
-        turno +=1
-    except ValueError:
-        print("Ocorreu um erro. Tente novamente.")
+            
+        turno += 1
+        
+    except ValueError as e:
+        print(Fore.RED + f"Erro: {e}")
+        time.sleep(1)
         continue
