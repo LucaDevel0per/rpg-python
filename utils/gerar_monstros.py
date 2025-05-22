@@ -1,7 +1,7 @@
 import random
 from models.monstro import Monstro
 
-prefixos = ["O Estuprado", "O Grande", "O Terrível", "O Mestre", "O Guardião", "O Cruel", "O Sangrento", "O Implacável"]
+prefixos = [ "O Grande", "O Terrível", "O Mestre", "O Guardião", "O Cruel", "O Sangrento", "O Implacável"]
 sufixos = ["Maldito", "Fantasma", "Morto", "Demônio", "Lorde", "Sombra", "Matador", "Sangue-Suga", "Maluco", "Da Silva", 
           "Sombrio", "Noturno", "Assassino", "Devorador", "Impiedoso", "Brutal"]
 
