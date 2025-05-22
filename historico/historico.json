@@ -1,0 +1,93 @@
+[
+  {
+    "nome": "Lopes",
+    "data": "22/05/2025 15:00:00",
+    "vitoria": true,
+    "nivel_final": 1,
+    "vida_final": 100
+  },
+  {
+    "nome": "Julio",
+    "data": "22/05/2025 15:04:47",
+    "vitoria": false,
+    "nivel_final": 1,
+    "vida_final": -33
+  },
+  {
+    "nome": "Lopes",
+    "data": "22/05/2025 15:05:19",
+    "vitoria": false,
+    "nivel_final": 1,
+    "vida_final": -16
+  },
+  {
+    "nome": "Fiote",
+    "data": "22/05/2025 15:06:08",
+    "vitoria": true,
+    "nivel_final": 1,
+    "vida_final": 19
+  },
+  {
+    "nome": "Jorge",
+    "data": "22/05/2025 15:07:40",
+    "vitoria": false,
+    "nivel_final": 1,
+    "vida_final": -3
+  },
+  {
+    "nome": "Luca II",
+    "data": "22/05/2025 15:09:23",
+    "vitoria": false,
+    "nivel_final": 1,
+    "vida_final": -10
+  },
+  {
+    "nome": "Luca III",
+    "data": "22/05/2025 15:12:32",
+    "vitoria": false,
+    "nivel_final": 1,
+    "vida_final": -16
+  },
+  {
+    "nome": "Luca V",
+    "data": "22/05/2025 15:15:30",
+    "vitoria": true,
+    "nivel_final": 1,
+    "vida_final": 81
+  },
+  {
+    "nome": "Luca V",
+    "data": "22/05/2025 15:16:23",
+    "vitoria": true,
+    "nivel_final": 1,
+    "vida_final": 58
+  },
+  {
+    "nome": "Luca VI",
+    "data": "22/05/2025 15:27:35",
+    "vitoria": true,
+    "nivel_final": 1,
+    "vida_final": 65
+  },
+  {
+    "nome": "Luca VI",
+    "data": "22/05/2025 15:28:17",
+    "vitoria": true,
+    "nivel_final": 1,
+    "vida_final": 65
+  },
+  {
+    "nome": "Luca VII",
+    "data": "22/05/2025 15:32:53",
+    "vitoria": true,
+    "nivel_final": 1,
+    "vida_final": 100
+  },
+  {
+    "nome": "Luca VIII",
+    "data": "22/05/2025 15:34:05",
+    "vitoria": true,
+    "nivel_final": 1,
+    "vida_final": 100
+  }
+]
